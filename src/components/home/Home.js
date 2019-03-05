@@ -21,8 +21,7 @@ class Home extends Component {
       console.log("ComponentDidMount called");
   }
   getData(){
-  axios.get(`https://jsonplaceholder.typicode.com/users`)
-    .then(res => {
+  axios.get(`https://jsonplaceholder.typicode.com/users`).then(res => {
         var result = res.data;
         console.log("====result===========");
         this.setState({ userData: result,fetched: true });

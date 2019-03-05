@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 // import ReactDOM from 'react-dom';
 
-import Home from './Home';
-import About from './About';
+import Home from './components/home/Home';
+import About from './components/about';
 import User from "./components/user/User";
 import Employee from "./components/employee";
 import {
