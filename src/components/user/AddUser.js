@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-import {Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 class AddUser extends Component {
 
-handleSubmit(e){ 
-  e.preventDefault();
-  console.log(this.refs.userId.value)
-  console.log(document.getElementById("userName").value)
-  console.log("submitted...!")
-  
-}
+  handleSubmit(e) {
+    e.preventDefault();
+    console.log(this.refs.userId.value)
+    console.log(document.getElementById("userName").value)
+    console.log("submitted...!")
+
+  }
 
   render() {
-    
+
     return (
       <div className="adduser">
         <h3>Add Users :- </h3>
@@ -32,7 +32,6 @@ handleSubmit(e){
           </FormGroup>
         </Form>
 
-          
       </div>
     );
   }

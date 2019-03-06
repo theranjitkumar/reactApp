@@ -51,16 +51,16 @@ class AppRouter extends Component {
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <NavLink> <Link to="/">Home</Link> </NavLink>
+                  <Link className="nav-link" to="/">Home</Link>
                 </NavItem>
                 <NavItem>
-                  <NavLink> <Link to="/about">About</Link> </NavLink>
+                  <Link className="nav-link" to="/about">About</Link>
                 </NavItem>
                 <NavItem>
-                  <NavLink> <Link to="/user">User</Link> </NavLink>
+                  <Link className="nav-link" to="/user">User</Link>
                 </NavItem>
                 <NavItem>
-                  <NavLink> <Link to="/employee">Employee</Link> </NavLink>
+                  <Link className="nav-link" to="/employee">Employee</Link>
                 </NavItem>
                 <UncontrolledDropdown nav inNavbar>
                   <DropdownToggle nav caret>

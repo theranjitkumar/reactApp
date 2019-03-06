@@ -3,31 +3,31 @@ import Users from "./Users";
 import AddUser from "./AddUser";
 
 class User extends Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
-      users:[]
+      users: []
     }
   }
 
-componentWillMount(){
-  console.log("componentwillMount");
+  componentWillMount() {
+    console.log("componentwillMount");
 
-  this.setState({
-    users:[
-      {userId:101, userName:"Alex"},
-      {userId:102, userName:"Alex"},
-      {userId:103, userName:"Alex"}
-    ]
-  })
+    this.setState({
+      users: [
+        { userId: 101, userName: "Alex" },
+        { userId: 102, userName: "Alex" },
+        { userId: 103, userName: "Alex" }
+      ]
+    })
 
-}
+  }
 
   render() {
-    console.log(this.state.users);
-    const userList = this.state.users.map(function(usrlst, index){
-      return (        
-        <li key={usrlst.userId}> {usrlst.userId} </li>        
+
+    const userList = this.state.users.map(function (usrlst, index) {
+      return (
+        <li key={usrlst.userId}> {usrlst.userId} </li>
       )
     });
 
@@ -36,7 +36,7 @@ componentWillMount(){
         <ul>
           {userList}
         </ul>
-        <AddUser/>
+        <AddUser />
         <Users users={this.state.users} />
       </div>
     );
