@@ -1,5 +1,20 @@
 import React, { Component } from 'react';
-// import ReactDOM from 'react-dom';
+import {
+  Container,
+  Row,
+  Col,
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem
+} from 'reactstrap';
 
 import Home from './components/home/Home';
 import About from './components/about';
@@ -8,29 +23,74 @@ import Employee from "./components/employee";
 import {
   BrowserRouter as Router,
   Route,
-  Link,HashRouter
+  Link, HashRouter
 } from 'react-router-dom'
 
 class AppRouter extends Component {
+  constructor(props) {
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      isOpen: false
+    };
+  }
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
   render() {
     return (
-        <HashRouter>
-            <div>
-            <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/about">About</Link></li>
-                <li><Link to="/user">User</Link></li>
-                <li><Link to="/employee">Employee</Link></li>
-            </ul>
+      <HashRouter>
 
-            <hr/>
+        <div>
+          <Navbar color="light" light expand="md">
+            <NavbarBrand href="/">React App</NavbarBrand>
+            <NavbarToggler onClick={this.toggle} />
+            <Collapse isOpen={this.state.isOpen} navbar>
+              <Nav className="ml-auto" navbar>
+                <NavItem>
+                  <NavLink> <Link to="/">Home</Link> </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink> <Link to="/about">About</Link> </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink> <Link to="/user">User</Link> </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink> <Link to="/employee">Employee</Link> </NavLink>
+                </NavItem>
+                <UncontrolledDropdown nav inNavbar>
+                  <DropdownToggle nav caret>
+                    Options
+                  </DropdownToggle>
+                  <DropdownMenu right>
+                    <DropdownItem>
+                      Angular
+                    </DropdownItem>
+                    <DropdownItem divider />
+                    <DropdownItem>
+                      React
+                    </DropdownItem>
+                  </DropdownMenu>
+                </UncontrolledDropdown>
+              </Nav>
+            </Collapse>
+          </Navbar>
 
-            <Route exact path="/" component={Home}/>
-            <Route path="/about" component={About}/>
-            <Route path="/user" component={User}/>
-            <Route path="/employee" component={Employee}/>
-            </div>
-        </HashRouter>
+          <Row>
+            <Col>
+              <Route exact path="/" component={Home} />
+              <Route path="/about" component={About} />
+              <Route path="/user" component={User} />
+              <Route path="/employee" component={Employee} />
+            </Col>
+          </Row>
+
+        </div>
+      </HashRouter>
     );
   }
 }
