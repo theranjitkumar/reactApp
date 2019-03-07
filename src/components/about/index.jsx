@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { Button, Alert } from 'reactstrap';
+
+import store from '../../redux/store'
+
 class About extends Component {
   constructor() {
     super();
@@ -9,8 +12,14 @@ class About extends Component {
     }
   }
 
-  componentWillMount(){
+  componentWillMount() {
     console.log('componentWillMount form about');
+    store.subscribe(() => {
+      console.log("now store is: " + store.getState());
+    });
+
+    store.dispatch({ type: "increase", payload: 3 });
+    store.dispatch({ type: "increase", payload: 6 });
   }
 
 

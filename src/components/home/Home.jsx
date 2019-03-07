@@ -28,22 +28,17 @@ class Home extends Component {
   }
   render() {
 
-    const Users = this.state.userData.map(function (user, index) {
-      return <li key={index}> {user.id} {user.name}; </li>
-    });
-
     return (
       <div className="home">
         <h3> {this.state.title} </h3>
         <br />
-        {Users}
-        <h3> User Data:- </h3>
-
-        <ul>
-          {this.state.userData.map(ud =>
-            <li key={ud.id}>{ud.name}</li>
-          )}
-        </ul>
+        <div>
+          <ul>
+            {this.state.userData.map(user =>
+              <li key={user.id}> {user.id} {user.name}; </li>
+            )}
+          </ul>
+        </div>
 
       </div>
     );

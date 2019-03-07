@@ -19,7 +19,8 @@ import {
 import Home from './components/home/Home';
 import About from './components/about';
 import User from "./components/user/User";
-import Employee from "./components/employee";
+import Posts from "./components/posts/Posts";
+
 import {
   BrowserRouter as Router,
   Route,
@@ -60,7 +61,7 @@ class AppRouter extends Component {
                   <Link className="nav-link" to="/user">User</Link>
                 </NavItem>
                 <NavItem>
-                  <Link className="nav-link" to="/employee">Employee</Link>
+                  <Link className="nav-link" to="/posts">Posts</Link>
                 </NavItem>
                 <UncontrolledDropdown nav inNavbar>
                   <DropdownToggle nav caret>
@@ -85,7 +86,7 @@ class AppRouter extends Component {
               <Route exact path="/" component={Home} />
               <Route path="/about" component={About} />
               <Route path="/user" component={User} />
-              <Route path="/employee" component={Employee} />
+              <Route path="/posts" component={Posts} />
             </Col>
           </Row>
 
